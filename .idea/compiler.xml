@@ -9,11 +9,13 @@
         <module name="Demo01" />
         <module name="Demo02" />
         <module name="ServletDemo" />
+        <module name="MyBatis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Demo01" target="8" />
       <module name="Demo02" target="8" />
+      <module name="MyBatis" target="8" />
       <module name="ServletDemo" target="1.8" />
     </bytecodeTargetLevel>
   </component>
