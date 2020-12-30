@@ -10,6 +10,7 @@
         <module name="Demo02" />
         <module name="ServletDemo" />
         <module name="MyBatis" />
+        <module name="spring-mvc-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +18,7 @@
       <module name="Demo02" target="8" />
       <module name="MyBatis" target="8" />
       <module name="ServletDemo" target="1.8" />
+      <module name="spring-mvc-test" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

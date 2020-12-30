@@ -4,4 +4,50 @@
     <select id="selectAll" resultType="com.yicen.myBatis.entity.Goods">
         select * from t_goods order by goods_id desc limit 10;
     </select>
+    <select id="selectById" parameterType="Integer" resultType="com.yicen.myBatis.entity.Goods">
+        select *
+        from t_goods
+        where goods_id = #{value}
+    ;
+    </select>
+    <select id="searchPriceByRange" parameterType="java.util.Map" resultType="com.yicen.myBatis.entity.Goods">
+        select *
+        from t_goods
+        where current_price between #{min} and #{max}
+        order by current_price limit 0,#{limit}
+    </select>
+    <select id="selectGoodsMap" resultType="java.util.LinkedHashMap">
+        select g.*,c.category_name
+        from t_goods as g,t_category as c
+        where g.category_id = c.category_id
+    </select>
+
+    <resultMap id="rmGoods" type="com.yicen.myBatis.dto.CategoryDTO">
+       <id property="goods.goodsId" column="goods_id"></id>
+        <result property="goods.title" column="title"></result>
+        <result property="goods.originalCost" column="original_cost"></result>
+        <result property="goods.currentPrice" column="current_price"></result>
+        <result property="goods.discount" column="discount"></result>
+        <result property="goods.isFreeDelivery" column="is_free_delivery"></result>
+        <result property="goods.categoryId" column="category_id"></result>
+        <result property="category.categoryId" column="category_id"></result>
+        <result property="category.categoryName" column="category_name"></result>
+        <result property="category.parentId" column="parent_id"></result>
+        <result property="category.categoryLevel" column="category_level"></result>
+        <result property="category.categoryOrder" column="category_order"></result>
+        <result property="test" column="test"></result>
+    </resultMap>
+    <select id="selectGoodsDTO" resultMap="rmGoods">
+        select g.*,c.*
+        from t_goods as g,t_category as c
+        where g.category_id = c.category_id
+    </select>
+
+    <insert id="insertGoods" parameterType="com.yicen.myBatis.entity.Goods">
+        INSERT INTO t_goods(title,sub_title,original_cost,current_price,discount,is_free_delivery,category_id )
+        values (#{title},#{subTitle},#{originalCost},#{currentPrice},#{discount},#{isFreeDelivery},#{categoryId});
+        <selectKey resultType="Integer" keyProperty="goodsId" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+    </insert>
 </mapper>

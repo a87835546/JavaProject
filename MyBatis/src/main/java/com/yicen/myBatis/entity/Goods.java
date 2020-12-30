@@ -1,7 +1,7 @@
 package com.yicen.myBatis.entity;
 
 public class Goods {
-    private String goodsId;
+    private Integer goodsId;
     private String title;
     private String subTitle;
     private Float originalCost;
@@ -10,11 +10,11 @@ public class Goods {
     private Integer isFreeDelivery;
     private String categoryId;
 
-    public String getGoodsId() {
+    public Integer getGoodsId() {
         return goodsId;
     }
 
-    public void setGoodsId(String goodsId) {
+    public void setGoodsId(Integer goodsId) {
         this.goodsId = goodsId;
     }
 
@@ -58,12 +58,12 @@ public class Goods {
         this.discount = discount;
     }
 
-    public Integer getFreeDelivery() {
+    public Integer getIsFreeDelivery() {
         return isFreeDelivery;
     }
 
-    public void setFreeDelivery(Integer freeDelivery) {
-        isFreeDelivery = freeDelivery;
+    public void setIsFreeDelivery(Integer isFreeDelivery) {
+        this.isFreeDelivery = isFreeDelivery;
     }
 
     public String getCategoryId() {
