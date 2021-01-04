@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/Demo02/Demo02.iml" filepath="$PROJECT_DIR$/Demo02/Demo02.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyBatis/MyBatis.iml" filepath="$PROJECT_DIR$/MyBatis/MyBatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/ServletDemo/ServletDemo.iml" filepath="$PROJECT_DIR$/ServletDemo/ServletDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-demo/spring-boot-demo.iml" filepath="$PROJECT_DIR$/spring-boot-demo/spring-boot-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-mvc-test/spring-mvc-test.iml" filepath="$PROJECT_DIR$/spring-mvc-test/spring-mvc-test.iml" />
     </modules>
   </component>
